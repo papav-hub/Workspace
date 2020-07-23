@@ -6,7 +6,6 @@ public class Cut {
 		// TODO Auto-generated method stub
 		String s = "Hello World";
 		System.out.println(s.substring(2, 6));
-
 	}
 
 }
