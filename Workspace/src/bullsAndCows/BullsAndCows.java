@@ -8,7 +8,7 @@ public class BullsAndCows {
 		// TODO Auto-generated method stub
 		
 		
-		int result[] = new int[3]; // 정답 정하기	
+		int result[] = new int[4]; // 정답 정하기	
 		result[0] = (int)(Math.random() * 9) + 1; // 첫번째 수는 0 안됨
 		for(int i = 1 ; i < result.length ; i++) {
 			result[i] = (int)(Math.random() * 10);
@@ -22,10 +22,11 @@ public class BullsAndCows {
 		for(int i = 0 ; i < result.length ; i++) { // 정답 출력 // 확인용
 			System.out.print(result[i] + " ");
 		}
+		System.out.println();
 		
 		while(true) {
 			
-		int input[] = new int[3]; // 사용자한테서 입력받기
+		int input[] = new int[4]; // 사용자한테서 입력받기
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자 : ");
 		for(int i = 0 ; i < input.length ; i++) {
@@ -38,7 +39,7 @@ public class BullsAndCows {
 				check = 0;
 			}
 		}		
-		if(check==1) {
+		if(check == 1) {
 			System.out.println("정답입니다!");
 			break;
 		}
@@ -60,14 +61,11 @@ public class BullsAndCows {
 			}
 		}
 		
-		if((strike==0)&&(ball==0)) {
+		if((strike == 0) && (ball == 0)) {
 			System.out.println("Out");
 		}else {
 			System.out.println("strike : " + strike + "\nball : " + ball);
 		}
-		
-		
-
 		}
 
 	}
