@@ -41,7 +41,7 @@ public class BullsAndCows {
 			int input[]; // 사용자한테서 입력받기
 			input = userInput();
 			
-			int check = 1;
+			int check = 1;//boolean
 			for(int i = 0 ; i < result.length ; i++) {// 정답 입력하면 break;
 				if(result[i]!=input[i]) {
 					check = 0;
