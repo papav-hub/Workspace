@@ -7,7 +7,7 @@ public class Main {
 	
 	static Security array[] = new Security[10];
 	
-	static int idCheck(String id, int n) { // ID È®ÀÎ
+	static int idCheck(String id, int n) { // ID í™•ì¸
 		int checkNumber = -1;
 		for(int i = 0 ; i < n ; i++) {
 			if(array[i].getId().equals(id)) {
@@ -25,65 +25,65 @@ public class Main {
 		
 		while(true) {
 			
-			int number = printMenu(); // ¸Ş´º Ãâ·Â ¹× ¹øÈ£ ¸®ÅÏ
+			int number = printMenu(); // ë©”ë‰´ ì¶œë ¥ ë° ë²ˆí˜¸ ë¦¬í„´
 								
-			if(number == 1) { // È¸¿ø°¡ÀÔ
+			if(number == 1) { // íšŒì›ê°€ì…
 				
-				System.out.print("Id : "); // ID ÀÔ·Â
+				System.out.print("Id : "); // ID ì…ë ¥
 				String id = sc.next();
 				
-				int check = idCheck(id, n);	// ID Áßº¹ È®ÀÎ			
+				int check = idCheck(id, n);	// ID ì¤‘ë³µ í™•ì¸			
 				
-				if(check < 0) { // Áßº¹ ¾ÈµÇ¸é password ÀÔ·Â¹Ş±â
+				if(check < 0) { // ì¤‘ë³µ ì•ˆë˜ë©´ password ì…ë ¥ë°›ê¸°
 					System.out.print("Password : ");
 					String password = sc.next();
 					array[n] = new Security(id, password);
 					n++;
-				}else { // Áßº¹ ¿¹¿ÜÃ³¸®
-					System.out.println("ÀÌ¹Ì Á¸ÀçÇÏ´Â IDÀÔ´Ï´Ù.");
+				}else { // ì¤‘ë³µ ì˜ˆì™¸ì²˜ë¦¬
+					System.out.println("ì´ë¯¸ ì¡´ì¬í•˜ëŠ” IDì…ë‹ˆë‹¤.");
 				}
 				
 				
-			}else if(number == 2) { // Ä³¸¯ÅÍ »ı¼º
-				System.out.println("È¸¿ø°¡ÀÔ ¿©ºÎ¸¦ È®ÀÎÇÏ°Ú½À´Ï´Ù."); // È¸¿ø°¡ÀÔ È®ÀÎ
+			}else if(number == 2) { // ìºë¦­í„° ìƒì„±
+				System.out.println("íšŒì›ê°€ì… ì—¬ë¶€ë¥¼ í™•ì¸í•˜ê² ìŠµë‹ˆë‹¤."); // íšŒì›ê°€ì… í™•ì¸
 				System.out.print("Id : ");
 				String id = sc.next();
 				
-				int checkNumber = idCheck(id, n); // ID Á¸Àç È®ÀÎ
+				int checkNumber = idCheck(id, n); // ID ì¡´ì¬ í™•ì¸
 				
-				if(checkNumber < 0) { // ID Á¸Àç  X
-					System.out.println("ID°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+				if(checkNumber < 0) { // ID ì¡´ì¬  X
+					System.out.println("IDê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 					continue;
-				}else { // ID, Password ÀÏÄ¡ È®ÀÎ
+				}else { // ID, Password ì¼ì¹˜ í™•ì¸
 					System.out.print("Password : ");
 					String password = sc.next();
 					
-					if(array[checkNumber].getPassword().equals(password)) { // È®ÀÎ ¿Ï·á
-						System.out.println("È®ÀÎÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");	
-					}else { // ºÒÀÏÄ¡
-						System.out.println("ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+					if(array[checkNumber].getPassword().equals(password)) { // í™•ì¸ ì™„ë£Œ
+						System.out.println("í™•ì¸ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");	
+					}else { // ë¶ˆì¼ì¹˜
+						System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 						continue;
 					}
 				}
 				
 			
-				System.out.print("Name : "); // ´Ğ³Û ÀÔ·Â¹Ş±â
+				System.out.print("Name : "); // ë‹‰ë„´ ì…ë ¥ë°›ê¸°
 				String name = sc.next();
 				
-				boolean check = true; // ´Ğ³Û Áßº¹È®ÀÎ
+				boolean check = true; // ë‹‰ë„´ ì¤‘ë³µí™•ì¸
 				for(int i = 0 ; i < n - 1 ; i++) {
 					if(array[i].getName().equals(name)||array[i].getName().equals("")) {
 						check = false;
 					}
 				}
 				
-				if(check) {// ´Ğ³Û »ı¼º ¿Ï·á Á÷¾÷ ÀÔ·Â¹Ş±â
-					System.out.print("Á÷¾÷ : ");
+				if(check) {// ë‹‰ë„´ ìƒì„± ì™„ë£Œ ì§ì—… ì…ë ¥ë°›ê¸°
+					System.out.print("ì§ì—… : ");
 					String job = sc.next();
 					array[checkNumber].setName(name);
 					array[checkNumber].setJob(job);
-				}else { // ´Ğ³Û Áßº¹ ¿¹¿ÜÃ³¸®
-					System.out.println("ÀÌ¹Ì Á¸ÀçÇÏ´Â ´Ğ³×ÀÓÀÔ´Ï´Ù.");
+				}else { // ë‹‰ë„´ ì¤‘ë³µ ì˜ˆì™¸ì²˜ë¦¬
+					System.out.println("ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ë‹‰ë„¤ì„ì…ë‹ˆë‹¤.");
 					continue;
 				}
 				
@@ -97,13 +97,13 @@ public class Main {
 				finProg();
 				break;
 			}else {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 	}
 	
 	static void checkInfo(int n) {
-		System.out.println("Á¤º¸ È®ÀÎÇÏ±â!");
+		System.out.println("ì •ë³´ í™•ì¸í•˜ê¸°!");
 		for(int i = 0 ; i < n ; i++) {
 			System.out.println("ID : " + array[i].getId() + "\npassword : " + array[i].getPassword() + "\nName : " + array[i].getName() + "\nJob : " + array[i].getJob() + "\n");
 		}
@@ -111,25 +111,40 @@ public class Main {
 	
 	static void finProg() {
 		System.out.println("--------------------");
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 		System.out.println("--------------------");
+		System.out.println(" âŠ‚_ãƒ½");
+		System.out.println("ã€€ ï¼¼ï¼¼ Î›ï¼¿Î›");
+		System.out.println("ã€€ã€€ ï¼¼( .ã…….) ë‘ë‘ ì¹«");
+		System.out.println("ã€€ã€€ã€€ >ã€€âŒ’ãƒ½");
+		System.out.println("ã€€ã€€ã€€/ ã€€ ã¸ï¼¼");
+		System.out.println("ã€€ ã€€ /ã€€ã€€/ã€€ï¼¼ï¼¼");
+		System.out.println("ã€€ã€€ ï¾šã€€ãƒã€€ã€€ ãƒ½_ã¤");
+		System.out.println("ã€€ã€€/ã€€/  í‡´ê·¼!!!");
+		System.out.println("    /ã€€/|");
+		System.out.println("ã€€(ã€€(ãƒ½");
+		System.out.println("ã€€|ã€€|ã€ï¼¼");
+		System.out.println("ã€€| ä¸¿ ï¼¼ âŒ’)");
+		System.out.println("ã€€| |ã€€ã€€) /");
+		System.out.println("`ãƒ )ã€€ã€€Lï¾‰");
+		
 	}
 	
-	static int printMenu() { // ¸Ş´º Ãâ·Â ¹× ¹øÈ£ ¸®ÅÏ
+	static int printMenu() { // ë©”ë‰´ ì¶œë ¥ ë° ë²ˆí˜¸ ë¦¬í„´
 
 		System.out.println("--------------------");
-		System.out.println("1. È¸¿ø°¡ÀÔ");
-		System.out.println("2. Ä³¸¯ÅÍ »ı¼º");
-		System.out.println("3. Ä³¸¯ÅÍ »ı¼º È®ÀÎ");
+		System.out.println("1. íšŒì›ê°€ì…");
+		System.out.println("2. ìºë¦­í„° ìƒì„±");
+		System.out.println("3. ìºë¦­í„° ìƒì„± í™•ì¸");
 		System.out.println("4. exit");
 		System.out.println("--------------------");
 		int number = 5;
 		try {
-			System.out.print("ÀÔ·Â : ");
+			System.out.print("ì…ë ¥ : ");
 			Scanner sc = new Scanner(System.in);
 			number = sc.nextInt();
         } catch ( InputMismatchException e ){
-            System.out.println("ÀÔ·Â¿À·ù ! Á¤¼ö¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ¾î¿ä");
+            System.out.println("ì…ë ¥ì˜¤ë¥˜ ! ì •ìˆ˜ë§Œ ì…ë ¥í•  ìˆ˜ ìˆì–´ìš”");
         }
 		
 		return number;
