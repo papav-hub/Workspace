@@ -20,6 +20,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		System.out.println("( ͡° ͜ʖ ͡°)  MAPLE  ( ͡° ͜ʖ ͡°) ");
 		Scanner sc = new Scanner(System.in);
 		int n = 0;
 		
@@ -96,9 +97,11 @@ public class Main {
 			}else if(number == 4) {
 				finProg();
 				break;
+				
 			}else {
 				System.out.println("잘못입력하셨습니다.");
 			}
+			
 		}
 	}
 	
@@ -108,6 +111,7 @@ public class Main {
 			System.out.println("ID : " + array[i].getId() + "\npassword : " + array[i].getPassword() + "\nName : " + array[i].getName() + "\nJob : " + array[i].getJob() + "\n");
 		}
 	}
+	
 	
 	static void finProg() {
 		System.out.println("--------------------");
