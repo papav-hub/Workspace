@@ -130,7 +130,7 @@ public class Main {
 		System.out.println("　|　|、＼");
 		System.out.println("　| 丿 ＼ ⌒)");
 		System.out.println("　| |　　) /");
-		System.out.println("`ノ )　　Lﾉ");
+		System.out.println(".ノ )　　Lﾉ");
 		
 	}
 	
