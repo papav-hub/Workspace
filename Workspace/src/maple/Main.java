@@ -29,7 +29,7 @@ public class Main {
 			int number = printMenu(); // 메뉴 출력 및 번호 리턴
 								
 			if(number == 1) { // 회원가입
-				
+				System.out.println("회원가입");
 				System.out.print("Id : "); // ID 입력
 				String id = sc.next();
 				
@@ -142,6 +142,8 @@ public class Main {
 	
 	static int printMenu() { // 메뉴 출력 및 번호 리턴
 
+		System.out.println("\n--------------------");
+		System.out.println("------- 메  뉴 --------");
 		System.out.println("--------------------");
 		System.out.println("1. 회원가입");
 		System.out.println("2. 로그인");
