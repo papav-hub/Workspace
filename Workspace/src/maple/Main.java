@@ -67,31 +67,38 @@ public class Main {
 					}
 				}
 				
+				while(true) {
+					int nn = loginMenu();
 				
-				int nn = loginMenu();
+					if(nn == 1) { // 로그인 하고, 캐릭터 생성
+						System.out.print("Name : "); // 닉넴 입력받기
+						String name = sc.next();
 				
-				if(nn == 1) { // 로그인 하고, 캐릭터 생성
-					System.out.print("Name : "); // 닉넴 입력받기
-					String name = sc.next();
-				
-					boolean check = true; // 닉넴 중복확인
-					for(int i = 0 ; i < n - 1 ; i++) {
-						if(array[i].getName().equals(name)||array[i].getName().equals("")) {
-							check = false;
+						boolean check = true; // 닉넴 중복확인
+						for(int i = 0 ; i < n - 1 ; i++) {
+							if(array[i].getName().equals(name)||array[i].getName().equals("")) {
+								check = false;
+							}
 						}
-					}
 				
-					if(check) {// 닉넴 생성 완료 직업 입력받기
-						System.out.print("직업 : ");
-						String job = sc.next();
-						array[checkNumber].setName(name);
-						array[checkNumber].setJob(job);
-					}else { // 닉넴 중복 예외처리
-						System.out.println("이미 존재하는 닉네임입니다.");
-						continue;
+						if(check) {// 닉넴 생성 완료 직업 입력받기
+							System.out.print("직업 : ");
+							String job = sc.next();
+							array[checkNumber].setName(name);
+							array[checkNumber].setJob(job);
+						}else { // 닉넴 중복 예외처리
+							System.out.println("이미 존재하는 닉네임입니다.");
+							continue;
+						}
+					}else if(nn == 2) {
+						checkInfo(checkNumber);
+					}else if(nn == 3) {
+						System.out.println("로그아웃");
+						break;
+						
+					}else {
+						System.out.println("잘못 입력하셨습니다.");
 					}
-				}else if(nn == 2) {
-					checkInfo(n);
 				}
 
 			}else if(number == 3) {
@@ -105,11 +112,10 @@ public class Main {
 		}
 	}
 	
-	static void checkInfo(int n) {
-		System.out.println("정보 확인하기!");
-		for(int i = 0 ; i < n ; i++) {
-			System.out.println("ID : " + array[i].getId() + "\npassword : " + array[i].getPassword() + "\nName : " + array[i].getName() + "\nJob : " + array[i].getJob() + "\n");
-		}
+	static void checkInfo(int checkNumber) {
+		System.out.println(array[checkNumber].getId() + "님의 정보 확인하기!");
+
+		System.out.println("ID : " + array[checkNumber].getId() + "\npassword : " + array[checkNumber].getPassword() + "\nName : " + array[checkNumber].getName() + "\nJob : " + array[checkNumber].getJob() + "\n");
 	}
 	
 	
@@ -157,6 +163,7 @@ public class Main {
 		System.out.println("--------------------");
 		System.out.println("1. 캐릭터 생성");
 		System.out.println("2. 캐릭터 생성 확인");
+		System.out.println("3. exit");
 		System.out.println("--------------------");
 		int number = 5;
 		try {
