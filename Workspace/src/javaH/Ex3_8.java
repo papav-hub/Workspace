@@ -18,7 +18,5 @@ public class Ex3_8 {
 		}
 		System.out.println("∆Ú±’¿∫ " + (double)sum/intArray.length);
 		scanner.close();
-
 	}
-
 }
