@@ -11,7 +11,5 @@ public class Ex6_9StringTokenizerEx {
 		while(st.hasMoreTokens()) {
 			System.out.println(st.nextToken());
 		}
-
 	}
-
 }
