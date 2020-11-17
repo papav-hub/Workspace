@@ -30,7 +30,5 @@ public class Book484pg_1 {
 				System.out.println("입출력 오류");
 			}
 			scanner.close();
-
 	}
-
 }

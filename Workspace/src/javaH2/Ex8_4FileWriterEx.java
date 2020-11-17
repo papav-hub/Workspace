@@ -8,7 +8,7 @@ public class Ex8_4FileWriterEx {
 		
 		Scanner scanner = new Scanner(System.in);
 		FileWriter fout = null;
-		//int c;
+		// int c;
 		try {
 			fout = new FileWriter("c:\\Temp\\test.txt");
 			while(true) {
