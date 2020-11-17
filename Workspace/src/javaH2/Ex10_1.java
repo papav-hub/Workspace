@@ -48,5 +48,6 @@ class MyActionListener implements ActionListener{ // µ¶¸³ class
 		}else {
 			b.setText("Action");
 		}
+
 	}
 }
