@@ -31,6 +31,8 @@ public class Ex10_2 extends JFrame{
 		// Action 리스너를 내부 클래스로 작성
 		// private으로 선언하여 Innerclass외부에서 사용할 수 없게 함
 		// 리스너에서 InnerClass리스너의 멤버에 대한 접근 용이
+		
+		// 내부 클래스에 여러가지 종류가 있다 // 내부 클래스는 교재에 없다!
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
